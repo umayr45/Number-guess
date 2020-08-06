@@ -1,16 +1,22 @@
 import React from 'react';
+
 function Random(){
-    var choice=1+Math.floor(Math.random() *100);
+    var choice=1+Math.floor(Math.random() *100);  
     return choice;
 
 }
 function Judge(a,b){
-    if(a===b){
+    if(a==b){
+        
         return(
+            
             <div id='correct'>
-                <h4>Correct!!!</h4>
+                <div >
+                    <h4>Correct!!!</h4> 
+                </div>
 
             </div>
+            
         );
     }
     else if(a-b <4){

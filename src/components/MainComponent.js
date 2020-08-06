@@ -5,13 +5,18 @@ import { Input } from 'reactstrap';
 import App from '../App'
 
 class Main extends Component{
+
+    
     constructor(props){
         super(props);
         this.state={
             answer:'',
+        
+            
         };
         this.handleChange=this.handleChange.bind(this);
         this.reset=this.reset.bind(this);
+        
     }
     handleChange(event){
         const target=event.target;
@@ -19,6 +24,7 @@ class Main extends Component{
         const name= target.name;
         this.setState({
             [name]:value
+
         })
     }
     reset(){
@@ -35,7 +41,7 @@ class Main extends Component{
                     <div className='col-12 col-md-6'>
                         <h3>Can you guess the number ?</h3>
                         
-                        <Input type='number' name='answer' id='answer' value={this.state.answer} placeholder='Guess the number...'
+                        <Input type='number' name='answer' id='answer' value={this.state.answer} placeholder='Guess the number from 1-100 ...'
                             onChange={this.handleChange}/>
                 
 
@@ -50,7 +56,7 @@ class Main extends Component{
 
                 </div>
                 <Switch>
-                    <Route path='/result' component={()=><Result answer={this.state.answer} />} />
+                    <Route path='/result' component={()=><Result answer={this.state.answer}  />} />
                 
                     <Redirect to='/' />
                 </Switch>
